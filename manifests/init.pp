@@ -7,12 +7,17 @@ class sonarqube (
 )
 {
 
+  validate_string($sonarqube_version, $user, $group, $download_site)
+  validate_integer($sonarqube_port)
 
+  include ::sonarqube::install
+#  include ::sonarqube::config
+#  include ::sonarqube::service
 
   anchor { '::sonarqube::begin': } ->
   Class['::Sonarqube::Install'] ->
-  Class['::Sonarqube::Config'] ~>
-  Class['::Sonarqube::Service'] ->
+#  Class['::Sonarqube::Config'] ~> #TODO
+#  Class['::Sonarqube::Service'] ->
   anchor { '::bitretriever::end': }
 }
 
