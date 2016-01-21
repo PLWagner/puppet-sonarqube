@@ -1,4 +1,4 @@
-oname    'sonarqube'
+name    'sonarqube'
 version '1.0.0'
 source 'http://github.com/plwagner/puppet-sonarqube'
 author 'Pierre-Luc Wagner <pierreluc.wagner@gmail.com>'
